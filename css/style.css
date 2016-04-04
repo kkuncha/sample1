@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+ 	.bs-example{
+        margin: 20px;
+    }
+    .conatiner{
+    	border:5px solid black;
+    }
+    .btn-primary{
+    	margin-top:40px;
+    	margin-left:95px;
+    }
+    .confirmbtn{
+	    margin-left: 100px;
+  	    width: 145px;
+	}
+	.dropdown-menu{
+		height:340px;
+	}
+	.backbtn{
+		width: 145px;
+  		margin-left: 20px;
+	}
+	.a{
+		float:left;
+		margin : 10px;
+	}
+	.clear{
+		clear:both;
+	}
+	.pager{
+		border:1px solid #ccc;
+		position:relative;
+  		top: -21px;
+	}
+	.pager .next{
+		float:right;
+		margin-right: 55px;
+	}
+	table, th, td{
+		text-align: center;
+	}
