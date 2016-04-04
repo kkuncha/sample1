@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Bootstrap 3 Accordion</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+    .bs-example{
+    	  margin: 20px;
+    	  margin-top: 70px;
+    }
+    .cancelBtn{
+    	  border: 1px solid #0090C6;
+ 		  width: 150px;
+    }
+    .nextBtn{
+    	  width: 150px;
+    	  margin-left: 110%;
+    }
+    hr {
+  		margin-left: 125px;
+  		width: 685px;
+  	    margin-top: 5px;
+        margin-bottom: 0px;
+  	}
+  	.badge{
+  		background-color: #0090C6;
+  		margin-left: 5px;
+  	}
+  	.AccSelect {
+  		width: 180px;
+  		height: 35px;
+  	}
+</style>
+</head>
+<body>
+<div class="bs-example">
+    <div class="container">
+        <div class="row" style="background-color: #f1f1f1;padding-top:20px;padding-left:110px;">
+            <h2>Account Profile</h2>
+        </div>    
+        <div class="row" style="background-color: #D0CFCF;padding-top:30px;padding-left: 150px;border:1px solid black;">
+            <div class="col-xs-2">
+                <strong style="font-size:18px;">Bruce B Wayne</strong>
+            </div>
+            <div class="col-xs-2">
+                <dl>
+                    <dt>Product</dt>
+                    <dd>Purchasing</dd>
+                </dl>       
+            </div>
+            <div class="col-xs-2">
+                <dl>
+                    <dt>Account Id</dt>
+                    <dd>1123-5673-2947</dd> 
+                </dl>                       
+            </div>
+            <div class="col-xs-2">
+                <dl>
+                    <dt>Account Number</dt>
+                    <dd>****-****-****-1235</dd>
+                </dl>                       
+            </div>
+            <div class="col-xs-3">
+                <dl>
+                    <dt>Account Status</dt>
+                    <dd>
+                        <select class="AccSelect">
+                            <option value="open" selected>Open</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </dd>
+                </dl>
+            </div>  
+        </div> 
+	    <div class="row" style="margin-top:0px;background-color: #f1f1f1;padding-bottom: 25px;">
+            <div class="col-xs-1">
+            </div>
+            <div class="col-xs-10" style="padding-top:30px;">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span onclick="minusFunction" class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Account Overview</a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt>Available Credit<span class="badge">i</span></dt><dd>$5700</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Current balance<span class="badge">i</span></dt><dd>$3000</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Account Credit Limit<span class="badge">i</span></dt><dd>$4500</dd></dl></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt>Past Due Balance<span class="glyphicon glyphicon-warning-sign" style="margin-left:5px;"></span></dt><dd style="color:red">$200</dd></dl></div>
+                                    <div class="col-xs-6"></div>
+                                </div>
+                                <hr>    
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt>Managing Account Number</dt><dd>****_****_9677</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>managing account ID</dt><dd>6326-3274-4774</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Managing Account Name</dt><dd>BPS TEST LM C-CARD</dd></dl></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt>Processing Hierarchy<span class="badge">i</span></dt><dd>LA OFFICE: 78648483264823648</dd><dd><button type="button" class="btn btn-primary">Change</button></dd></dl></div>
+                                    <div class="col-xs-6"></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue">Expiration Date</dt><dd>05/2016</dd></dl></div>
+                                    <div class="col-xs-3"><button type="button" class="btn btn-primary">Send Card Security Code</button></div>
+                                    <div class="col-xs-1"><span class="badge" style="margin-left:0px;">i</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Account Owner Information</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt>Social Security Number</dt><dd><input type="text" class="form-group"></dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Date Of Birth</dt><dd><input type="text" class="form-group"></dd></dl></div>
+                                    <div class="col-xs-3"></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-4">
+                                        <dl>
+                                            <dt>Mailing Address</dt>
+                                            <dd><input type="text" class="form-group"></dd>
+                                            <dd>
+                                                <select style="width:175px;height:28px;">
+                                                    <option value="USA">USA</option>
+                                                    <option value="CANADA">CANADA</option>
+                                                </select>
+                                            </dd>
+                                            <br>
+                                            <dd>
+                                                <select style="width:175px;height:28px;">
+                                                    <option value="USA">Colardo</option>
+                                                    <option value="CANADA">Newyork</option>
+                                                    <option value="CANADA">Texas</option>
+                                                </select>
+                                            </dd><br>
+                                        </dl>
+                                    </div>
+                                    <div class="col-xs-6"></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-4"><dl><dt style="color:blue;">Email Address</dt><dd><input type="email" class="form-group"></dd></dl></div>
+                                    <div class="col-xs-6"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-4"><dl><dt style="color:blue;">Work Phone</dt><dd><input type="text" class="form-group"></dd></dl></div>
+                                    <div class="col-xs-4"><dl><dt style="color:blue;">Personal Phone</dt><dd><input type="text" class="form-group"></dd></dl></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-4"><dl><dt style="color:blue;">Additional Number</dt><dd><input type="text" class="form-group"></dd></dl></div>
+                                    <div class="col-xs-4"><dl><dt style="color:blue;">Fax Number</dt><dd><input type="text" class="form-group"></dd></dl></div>                  
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-4"><dl><dt style="color:blue;">Optional 1</dt><dd><input type="text" class="form-group"></dd></dl></div>
+                                    <div class="col-xs-4"><dl><dt style="color:blue;">Optional 2</dt><dd><input type="text" class="form-group"></dd></dl></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-4"><dl><dt style="color:blue;">Identification Number</dt><dd><input type="text" class="form-group"></dd></dl></div>
+                                    <div class="col-xs-4"><dl><dt style="color:blue;">Tax Exempt Number</dt><dd><input type="text" class="form-group"></dd></dl></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-6"><dl><dt>Account Owner Information Comments</dt><dd><textarea rows="4" cols="50"></textarea></dd></dl></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Account Details</a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt>cycle day</dt><dd>12</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>opendate</dt><dd>02/01/2017</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Activated</dt><dd> Yes</dd></dl></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue">Operation Name</dt><dd>wayne Industries</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue">Region Code</dt><dd>11007</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Mailing language</dt><dd>English</dd></dl></div>
+                                </div>
+                                <hr>
+                                 <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue">Physical Card</dt></dl></div>
+                                    <div class="col-xs-6"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue">Recover Physical Card</dt><dd>No</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Mail to Plan Administrator<span class="badge">i</span></dt><dd>Yes</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Reorder PIN<span class="badge">i</span></dt><dd>No</dd></dl></div>
+                                </div>    
+                                <hr>
+                                <div class="row">
+                                	<div class="col-xs-2"></div>
+                                	<div class="col-xs-3"><dl><dt style="color:blue;">Checks</dt></dl></div>
+                                </div>   
+                                <div class="row">
+                                	<div class="col-xs-2"></div>
+                                	<div class="col-xs-3"><dl><dt>Order Checks<span class="badge">i</span></dt><dd>No</dd></dl></div>
+                                	<div class="col-xs-3"><dl><dt>Checks</dt><dd>Yes</dd></dl></div>
+                                </div> 
+                                <div class="row">
+                                	<div class="col-xs-2"></div>
+                                	<div class="col-xs-3"><dl><dt>Maximum Dollar Per Check<span class="badge">i</span></dt><dd>2000</dd></dl></div>
+                                	<div class="col-xs-3"><dl><dt>Days Check Remains Valid<span class="badge">i</span></dt><dd>...</dd></dl></div>
+                                </div> 
+                                <hr>
+                                <div class="row">
+                                	<div class="col-xs-2"></div>
+                                	<div class="col-xs-3"><dl><dt style="color:blue;">Reporting Level<span class="badge">i</span></dt></dl></div>
+                                </div>
+                                <div class="row">
+                                	<div class="col-xs-2"></div>
+                                	<div class="col-xs-1"><dl><dt>Level1</dt><dd>00234</dd></dl></div>
+                                	<div class="col-xs-1"><dl><dt>Level2</dt><dd>00234</dd></dl></div>
+                                	<div class="col-xs-1"><dl><dt>Level3</dt><dd>00234</dd></dl></div>
+                                	<div class="col-xs-1"><dl><dt>Level4</dt><dd>00234</dd></dl></div>
+                                	<div class="col-xs-1"><dl><dt>Level5</dt><dd>00234</dd></dl></div>
+                                	<div class="col-xs-1"><dl><dt>Level6</dt><dd>00234</dd></dl></div>
+                                	<div class="col-xs-1"><dl><dt>Level7</dt><dd>00234</dd></dl></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                	<div class="col-xs-2"></div>
+                                	<div class="col-xs-2"><dl><dt>Start Date</dt><dd>05/26/2014</dd></dl></div>
+                                	<div class="col-xs-2"><dl><dt>End Date</dt><dd>08/29/2016</dd></dl></div>
+                                </div>          
+                                <hr>
+                                <div class="row">
+                                	<div class="col-xs-2"></div>
+                                	<div class="col-xs-3"><dl><dt>Account Setails Comments</dt><dd><textarea rows="5" cols="50"></textarea></dd></dl></div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+         			<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Default Accounting Code</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><h5 style="color:blue">Default Accounting Code<span class="badge">i</span></h5></div>
+                                    <div class="col-xs-7"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2"><dl><dt>Project(4)</dt><dd>23213</dd></dl></div>
+                                    <div class="col-xs-2"><dl><dt>Index(3)</dt><dd>11007</dd></dl></div>
+                                    <div class="col-xs-2"><dl><dt>Business Unit(5)</dt><dd>43234</dd></dl></div>
+                                    <div class="col-xs-2"><dl><dt>Cost Center(5)</dt><dd>64563</dd></dl></div>
+                                    <div class="col-xs-2"><dl><dt>GL Expenses</dt><dd>GA213213</dd></dl></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-8"><dl><dt>Segment 1(62)</dt><dd>87587587875875885645645663366660980809877979969696986969696969689667823213</dd></dl></div>
+                                    <div class="col-xs-2"><dl><dt>Segment 4(8)</dt><dd>OPIA75757</dd></dl></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2"><dl><dt>Segment 1(62)</dt><dd>87587</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Segment 4(8)</dt><dd>OPIA75757</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Segment 4(8)</dt><dd>OPIA75757</dd></dl></div>
+                                    <div class="col-xs-2"><dl><dt>Segment 4(8)</dt><dd>OPIA75757</dd></dl></div></div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2"><dl><dt>Segment 1(62)</dt><dd>87587</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Segment 4(8)</dt><dd>OPIA75757</dd></dl></div>
+                                    <div class="col-xs-5"></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-10"><dl><dt>Default Accounting Code Comments</dl></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-8"><textarea rows="5" cols="70"></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Autorization Limits</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Single Purchase Limit<span class="badge">i</span></dt><dd>$4500</dd></dl></div>
+                                    <div class="col-xs-7"><dl><dt style="color:blue;">Cash Withdrwal Limit<span class="badge">i</span></dt><dd>0</dd></dl></div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-10"><dl><dt style="color:blue;">Use Values From Managing Account<span class="badge">i</span></dt></dl></div>
+                                </div>
+                                 <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt>Single Purchase Limit</dt><dd>Yes</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Velocity Limits</dt><dd>No</dd></dl></div>
+                                    <div class="col-xs-3"><dl><dt>Merchant Authorization Controls</dt><dd>Yes</dd></dl></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-10"><dl><dt>Velocity Limits<span class="badge">i</span></dt></dl></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-5"></div>
+                                    <div class="col-xs-1"><dl><dt>Total</dt></dl></div>
+                                    <div class="col-xs-3"></div>
+                                    <div class="col-xs-1"><dl><dt>Total</dt></dl></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Daily Dollar Amount</dt></dl></div>
+                                    <div class="col-xs-1"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Daily Transaction Limit</dt></dl></div>
+                                    <div class="col-xs-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3">0</div>
+                                    <div class="col-xs-1">0</div>
+                                    <div class="col-xs-3">0</div>
+                                    <div class="col-xs-3">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Cycle Dollar Amount</dt></dl></div>
+                                    <div class="col-xs-1"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Cycle Transaction Limit</dt></dl></div>
+                                    <div class="col-xs-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3">0</div>
+                                    <div class="col-xs-1">0</div>
+                                    <div class="col-xs-3">0</div>
+                                    <div class="col-xs-3">0</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Monthly Dollar Amount</dt></dl></div>
+                                    <div class="col-xs-1"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Monthly Transaction Limit</dt></dl></div>
+                                    <div class="col-xs-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3">0</div>
+                                    <div class="col-xs-1">0</div>
+                                    <div class="col-xs-3">0</div>
+                                    <div class="col-xs-3">0</div>
+                                </div>
+                                 <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Quarterly Dollar Amount</dt></dl></div>
+                                    <div class="col-xs-1"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Quarterly Transaction Limit</dt></dl></div>
+                                    <div class="col-xs-3"></div>
+                                </div>
+                                 <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3">0</div>
+                                    <div class="col-xs-1">0</div>
+                                    <div class="col-xs-3">0</div>
+                                    <div class="col-xs-3">0</div>
+                                </div>
+                                <div class="row">
+                                	<div class="col-xs-2"></div>
+                                	<div class="col-xs-3"><dl><dt>First Fiscal Month</dt><dd>May</dd></dl></div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                	<div class="col-xs-5"></div>
+                                	<div class="col-xs-1">Total</div>
+                                	<div class="col-xs-3"></div>
+                                	<div class="col-xs-1">Total</div>
+                                </div>
+                                <div class="row">
+                                	<div class="col-xs-2"></div>
+                                	<div class="col-xs-3"><dl><dt>Custom dollar Amount</dt><dd>0</dd></dl></div>
+                                	<div class="col-xs-1"><dl><dt></dt><dd>0</dd></dl></div>
+                                	<div class="col-xs-3"><dl><dt>Custom Transaction Limit</dt><dd>0</dd></dl></div>
+                                	<div class="col-xs-1"><dl><dt> </dt><dd>0</dd></dl></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Fleet Information</a>
+                            </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-3"><dl><dt style="color:blue;">Vehicle Number</dt></dl></div><br>
+                                     
+                                       
+<!--                                     <div class="col-xs-3"><dl><dt style="color:blue;">Assigned Driver</dt><dd>0000000</dd></dl></div> -->
+<!--                                     <div class="col-xs-3"><dl><dt style="color:blue;">Assigned List of Drivers</dt><dd>--</dd></dl></div> -->
+                                </div>
+                                 
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                  	 <div class="col-xs-3"><input class="formInput" type="text" value=""></div>
+                                  	 <div class="col-xs-1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+                                  	 <div class="col-xs-3"><a href="createvehicle.html">create vehicle</a></div>
+                                </div>   
+                                
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-10"><dl><dt>Fleet Information Comments</dt></dl></div>
+                                </div>  
+                                <div class="row">
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-10"><textarea rows="5" cols="100"></textarea></div>
+                                </div>           
+                            </div>
+                        </div>
+                 	</div>
+  				</div> 
+  				<div class="row">
+  					<div class=:col-xs-2"></div> 
+  					<div class="col-xs-3"><button class="btn btn-primary cancelBtn">Cancel</button></div>
+  					<div class="col-xs-5"></div>
+  					<div class="col-xs-2"><button class="btn btn-primary nextBtn">Next</button></div>
+  				</div>   
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>    
